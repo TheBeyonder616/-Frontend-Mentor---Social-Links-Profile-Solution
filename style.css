@@ -1,0 +1,137 @@
+@import url(https://fonts.google.com/specimen/Inter);
+
+:root {
+  /* Colors */
+  --crl-Secondary: hsl(75, 94%, 57%);
+  --crl-White: hsl(0, 0%, 100%);
+  --Primary-grey-700: hsl(0, 0%, 20%);
+  --Primary-grey-800: hsl(0, 0%, 12%);
+  --Primary-grey-900: hsl(0, 0%, 8%);
+
+  /* Font Weight */
+  --weight-400: 400;
+  --weight-600: 600;
+  --weight-700: 700;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter" sans-serif;
+  background-color: var(--Primary-grey-900);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card {
+  background-color: var(--Primary-grey-800);
+  width: clamp(27.5rem, 90%, 30rem);
+  height: clamp(53rem, 70vh, 54rem);
+  border-radius: 1.5rem;
+  text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around;  */
+}
+
+.card__img {
+  border-radius: 50%;
+  width: 30%;
+  margin: 1rem auto;
+  height: auto;
+  overflow: hidden;
+}
+.card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-style: italic;
+  display: block;
+  /* Incase the image doesnt load the alt would be in italic */
+}
+
+.card__text {
+  margin: 1rem 0;
+}
+.card__text h1 {
+  color: var(--crl-White);
+  font-size: clamp(2.4rem, 3vw, 2.5rem);
+  font-weight: var(--weight-700);
+  margin-top: 1rem;
+}
+.card__text h2 {
+  color: var(--crl-Secondary);
+  font-size: clamp(1.4rem, 2vw, 1.5rem);
+  font-weight: var(--weight-600);
+  margin-top: 1rem;
+}
+.card__text p {
+  --crl-White-dark: rgba(255, 255, 255, 0.8);
+  color: var(--crl-White-dark);
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
+  font-weight: var(--weight-400);
+  margin: 2.5rem 0;
+}
+
+.card__list {
+  margin: 1rem 0;
+}
+
+.card__list a {
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.card__list a {
+  text-decoration: none;
+}
+
+.card li {
+  list-style: none;
+  padding: 1.5rem;
+  background-color: var(--Primary-grey-700);
+  color: var(--crl-White);
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
+  border-radius: 0.5rem;
+  margin: 1rem;
+  font-weight: var(--weight-700);
+  transition: color 0.2s ease, background-color, 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0.1rem 0.1rem 0.1rem var(--crl-Secondary),
+    0.1rem 0.1rem 0.1rem var(--crl-Secondary);
+}
+
+.card li:hover {
+  background-color: var(--crl-Secondary);
+  color: var(--Primary-grey-800);
+  box-shadow: 0.1rem 0.1rem 0.1rem var(--crl-White);
+}
+
+.card_attribution {
+  font-size: clamp(1.1rem, 2vw, 1.2rem);
+  color: var(--crl-Secondary);
+}
+.card_attribution a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--crl-White);
+}
+.card__attribution a:hover,
+.card__attribution a:focus {
+  color: var(--crl-White);
+}
